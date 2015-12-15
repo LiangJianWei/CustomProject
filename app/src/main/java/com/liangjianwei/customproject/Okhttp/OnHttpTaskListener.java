@@ -1,4 +1,4 @@
-package com.liangjianwei.customproject.HttpRequest;
+package com.liangjianwei.customproject.Okhttp;
 
 import com.squareup.okhttp.Request;
 

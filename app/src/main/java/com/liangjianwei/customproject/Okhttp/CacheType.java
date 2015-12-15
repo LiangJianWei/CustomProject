@@ -1,4 +1,4 @@
-package com.liangjianwei.customproject.HttpRequest;
+package com.liangjianwei.customproject.Okhttp;
 
 /**
  * 缓存类型  cache  or network

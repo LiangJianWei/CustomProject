@@ -1,9 +1,10 @@
-package com.liangjianwei.customproject.HttpRequest;
+package com.liangjianwei.customproject.Okhttp;
 
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.liangjianwei.customproject.HttpRequest.JsonGenerator;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.Headers;
 import com.squareup.okhttp.Request;

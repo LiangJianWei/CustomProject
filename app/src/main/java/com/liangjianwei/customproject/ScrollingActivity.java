@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.liangjianwei.customproject.HttpRequest.HttpUtils;
+import com.liangjianwei.customproject.Okhttp.HttpUtils;
 
 public class ScrollingActivity extends BaseActivity {
 

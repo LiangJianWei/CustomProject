@@ -8,9 +8,9 @@ import android.widget.TextView;
 
 import com.squareup.okhttp.Request;
 
-import com.liangjianwei.customproject.HttpRequest.CacheType;
-import com.liangjianwei.customproject.HttpRequest.HttpUtils;
-import com.liangjianwei.customproject.HttpRequest.OnHttpTaskListener;
+import com.liangjianwei.customproject.Okhttp.CacheType;
+import com.liangjianwei.customproject.Okhttp.HttpUtils;
+import com.liangjianwei.customproject.Okhttp.OnHttpTaskListener;
 import com.liangjianwei.customproject.bean.BaseBean;
 
 public class TestHttpActivity extends AppCompatActivity {
