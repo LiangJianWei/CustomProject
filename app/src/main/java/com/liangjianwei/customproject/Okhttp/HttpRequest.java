@@ -138,8 +138,10 @@ public class HttpRequest {
      * get 获取数据
      */
     private void getData(String url, final CacheControl cacheControl, Headers headers, final Callback callback) {
+        Log.d("-----", "url: " + url);
         final Request.Builder requestBuilder = new Request.Builder().url(url).cacheControl(cacheControl);
         if (headers != null) {
+            Log.d("-----", "getData: " + headers.values("apikey"));
             requestBuilder.headers(headers);
         }
         requestBuilder.tag(url);

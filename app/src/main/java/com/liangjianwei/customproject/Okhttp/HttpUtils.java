@@ -4,6 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.liangjianwei.customproject.BaiduApi.BaiduApi;
 import com.liangjianwei.customproject.HttpRequest.JsonGenerator;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.Headers;
@@ -147,7 +148,7 @@ public class HttpUtils {
      * get 请求
      */
     public <T> void get(Class<T> tClass, OnHttpTaskListener<T> onHttpTaskListener) {
-        request.get(url, cacheType, null, getCallback(parser, tClass, onHttpTaskListener));
+        request.get(url, cacheType, addHeader(), getCallback(parser, tClass, onHttpTaskListener));
     }
 
     /**
@@ -199,11 +200,9 @@ public class HttpUtils {
     /**
      * headers 所需要传的值
      */
-    private static Headers addHeader() {
+    private Headers addHeader() {
         HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put("deviceid", MobileInfoUtils.getUUID());
-        hashMap.put("ver", VERSION);
-        hashMap.put("timestamp", String.valueOf(System.currentTimeMillis()));
+        hashMap.put("apikey", BaiduApi.BAIDU_API_KRY);
         return Headers.of(hashMap);
     }
 

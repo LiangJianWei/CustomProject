@@ -4,63 +4,63 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.liangjianwei.customproject.BaiduApi.BaiduApi;
+import com.liangjianwei.customproject.bean.IDCardBean;
+import com.liangjianwei.customproject.bean.MobileAddressBean;
+import com.liangjianwei.customproject.bean.WeatherBean;
 import com.squareup.okhttp.Request;
 
-import com.liangjianwei.customproject.Okhttp.CacheType;
-import com.liangjianwei.customproject.Okhttp.HttpUtils;
 import com.liangjianwei.customproject.Okhttp.OnHttpTaskListener;
-import com.liangjianwei.customproject.bean.BaseBean;
 
 public class TestHttpActivity extends AppCompatActivity {
 
-    private HttpUtils httpUtils;
-    private boolean isClick;
-
     private String postUrl = "https://app.junrongdai.com/appapi/getProjectListInfo";
-
-    private String getUrl = "http://api.k780.com:88/?app=life.time&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json";
     private ProgressDialog dialog;
     private TextView text;
+    private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_http);
 
+        editText = (EditText) findViewById(R.id.editText);
         text = (TextView)findViewById(R.id.textView2);
-        dialog =  new ProgressDialog(TestHttpActivity.this);
+        dialog = new ProgressDialog(TestHttpActivity.this);
 
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                httpUtils = new HttpUtils(TestHttpActivity.this,getUrl, CacheType.ONLY_NETWORK);
-                httpUtils.get(BaseBean.class, new OnHttpTaskListener<BaseBean>() {
-
+                if (editText.getText().toString().equals("")) {
+                    return;
+                }
+                BaiduApi.searchIDCard(TestHttpActivity.this, editText.getText().toString(), new OnHttpTaskListener<IDCardBean>() {
                     @Override
                     public void onStart() {
+
                         dialog.show();
 
                     }
 
                     @Override
                     public void onError(Request request) {
+
                         dialog.dismiss();
                     }
 
                     @Override
-                    public void onSuccess(final BaseBean bean, final String content) {
-                        dialog.dismiss();
+                    public void onSuccess(final IDCardBean bean, final String context) {
 
+                        dialog.dismiss();
                         text.post(new Runnable() {
                             @Override
                             public void run() {
-                                text.setText(content);
+                                text.setText(bean.getRetData().getSex() + bean.getRetData().getBirthday() + bean.getRetData().getAddress());
                             }
                         });
-
-
                     }
                 });
 
@@ -69,8 +69,10 @@ public class TestHttpActivity extends AppCompatActivity {
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                httpUtils = new HttpUtils(TestHttpActivity.this,getUrl, CacheType.ONLY_CACHED);
-                httpUtils.get(BaseBean.class, new OnHttpTaskListener<BaseBean>() {
+                if (editText.getText().toString().equals("")) {
+                    return;
+                }
+                BaiduApi.searchWeather(TestHttpActivity.this, editText.getText().toString(), new OnHttpTaskListener<WeatherBean>() {
                     @Override
                     public void onStart() {
 
@@ -79,21 +81,19 @@ public class TestHttpActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(Request request) {
+
                         dialog.dismiss();
                     }
 
                     @Override
-                    public void onSuccess(final BaseBean bean, final String content) {
+                    public void onSuccess(final WeatherBean bean, final String context) {
                         dialog.dismiss();
-
                         text.post(new Runnable() {
                             @Override
                             public void run() {
-                                text.setText(content);
+                                text.setText(bean.getRetData().getAltitude() + bean.getRetData().getCity() + bean.getRetData().getCitycode() + bean.getRetData().getDate() + bean.getRetData().getH_tmp() + bean.getRetData().getL_tmp() + bean.getRetData().getPostCode() + bean.getRetData().getSunrise() + bean.getRetData().getSunset() + bean.getRetData().getTemp() + bean.getRetData().getTime() + bean.getRetData().getLongitude() + bean.getRetData().getLatitude() + bean.getRetData().getWeather() + bean.getRetData().getWS() + bean.getRetData().getWD());
                             }
                         });
-
-
                     }
                 });
             }
@@ -101,11 +101,17 @@ public class TestHttpActivity extends AppCompatActivity {
         findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                httpUtils = new HttpUtils(TestHttpActivity.this,postUrl, CacheType.ONLY_NETWORK);
-                httpUtils.putParam("PageSize","1");
-                httpUtils.putParam("PageNo","1");
-                httpUtils.putParam("sortType","1");
-                httpUtils.post(BaseBean.class, new OnHttpTaskListener<BaseBean>() {
+
+            }
+        });
+
+        findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (editText.getText().toString().equals("")) {
+                    return;
+                }
+                BaiduApi.searchMobile(TestHttpActivity.this, editText.getText().toString(), new OnHttpTaskListener<MobileAddressBean>() {
                     @Override
                     public void onStart() {
 
@@ -114,92 +120,27 @@ public class TestHttpActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(Request request) {
+
                         dialog.dismiss();
                     }
 
                     @Override
-                    public void onSuccess(final BaseBean bean, final String content) {
-                        dialog.dismiss();
+                    public void onSuccess(final MobileAddressBean bean, String context) {
 
+                        dialog.dismiss();
+                        if (bean.getErrNum() == -1) {
+                            return;
+                        }
                         text.post(new Runnable() {
                             @Override
                             public void run() {
-                                text.setText(content);
+                                text.setText(bean.getRetData().getPhone() + bean.getRetData().getCity() + bean.getRetData().getProvince() + bean.getRetData().getSupplier());
                             }
                         });
-
-
                     }
                 });
             }
         });
 
-        findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(isClick){
-                    httpUtils = new HttpUtils(TestHttpActivity.this,postUrl, CacheType.CACHED_ELSE_NETWORK);
-                    httpUtils.putParam("PageSize","1");
-                    httpUtils.putParam("PageNo","1");
-                    httpUtils.putParam("sortType","1");
-                    httpUtils.get(BaseBean.class, new OnHttpTaskListener<BaseBean>() {
-                        @Override
-                        public void onStart() {
-                            dialog.show();
-
-                        }
-
-                        @Override
-                        public void onError(Request request) {
-                            dialog.dismiss();
-                        }
-
-                        @Override
-                        public void onSuccess(final BaseBean bean, final String content) {
-                            dialog.dismiss();
-
-                            text.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    text.setText(content);
-                                    isClick = false;
-                                }
-                            });
-
-
-                        }
-                    });
-                }else{
-                    httpUtils = new HttpUtils(TestHttpActivity.this,getUrl, CacheType.CACHED_ELSE_NETWORK);
-                    httpUtils.get(BaseBean.class, new OnHttpTaskListener<BaseBean>() {
-                        @Override
-                        public void onStart() {
-                            dialog.show();
-
-                        }
-
-                        @Override
-                        public void onError(Request request) {
-                            dialog.dismiss();
-                        }
-
-                        @Override
-                        public void onSuccess(final BaseBean bean, final String content) {
-                            dialog.dismiss();
-
-                            text.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    text.setText(content);
-                                    isClick = true;
-                                }
-                            });
-
-
-                        }
-                    });
-                }
-            }
-        });
     }
 }

@@ -20,5 +20,5 @@ public interface OnHttpTaskListener<T> {
     /**
      * 请求成功
      */
-    void onSuccess(T bean, String context);
+    void onSuccess(T bean, String content);
 }
