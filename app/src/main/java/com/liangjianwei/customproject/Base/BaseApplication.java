@@ -1,4 +1,12 @@
-package com.liangjianwei.customproject;
+/*
+ * Copyright (c) 2015.
+ *
+ * 个人信息 版权所有
+ *
+ * LIANG JIAN WEI
+ */
+
+package com.liangjianwei.customproject.Base;
 
 import android.app.Application;
 import android.content.Context;

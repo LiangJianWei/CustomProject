@@ -1,4 +1,12 @@
-package com.liangjianwei.customproject;
+/*
+ * Copyright (c) 2015.
+ *
+ * 个人信息 版权所有
+ *
+ * LIANG JIAN WEI
+ */
+
+package com.liangjianwei.customproject.activity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -8,6 +16,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.liangjianwei.customproject.BaiduApi.BaiduApi;
+import com.liangjianwei.customproject.Base.BaseActivity;
+import com.liangjianwei.customproject.R;
 import com.liangjianwei.customproject.bean.IDCardBean;
 import com.liangjianwei.customproject.bean.MobileAddressBean;
 import com.liangjianwei.customproject.bean.WeatherBean;
@@ -15,7 +25,7 @@ import com.squareup.okhttp.Request;
 
 import com.liangjianwei.customproject.Okhttp.OnHttpTaskListener;
 
-public class TestHttpActivity extends AppCompatActivity {
+public class TestHttpActivity extends BaseActivity {
 
     private String postUrl = "https://app.junrongdai.com/appapi/getProjectListInfo";
     private ProgressDialog dialog;

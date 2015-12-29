@@ -9,7 +9,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.liangjianwei.customproject.BaseApplication;
+import com.liangjianwei.customproject.Base.BaseApplication;
 
 
 /**

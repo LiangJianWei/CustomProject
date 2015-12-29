@@ -1,22 +1,29 @@
-package com.liangjianwei.customproject;
+/*
+ * Copyright (c) 2015.
+ *
+ * 个人信息 版权所有
+ *
+ * LIANG JIAN WEI
+ */
+
+package com.liangjianwei.customproject.Base;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import com.liangjianwei.customproject.autolayout.AutoLayoutActivity;
+
 /**
- * Created by Javen on 2015/12/4.
+ * Created by LIANG JIAN WEI on 2015/12/4 15:00
  */
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends AutoLayoutActivity {
 
 
     /**
      * 点击屏幕关闭键盘
-     * @param ev
-     * @return
      */
     public boolean dispatchTouchEvent(MotionEvent ev) {
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {
@@ -25,16 +32,14 @@ public class BaseActivity extends AppCompatActivity {
 
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 if (imm != null) {
+                    assert v != null;
                     imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                 }
             }
             return super.dispatchTouchEvent(ev);
         }
         // 必不可少，否则所有的组件都不会有TouchEvent了
-        if (getWindow().superDispatchTouchEvent(ev)) {
-            return true;
-        }
-        return onTouchEvent(ev);
+        return getWindow().superDispatchTouchEvent(ev) || onTouchEvent(ev);
     }
 
     public boolean isShouldHideInput(View v, MotionEvent event) {
@@ -46,13 +51,8 @@ public class BaseActivity extends AppCompatActivity {
             int top = leftTop[1];
             int bottom = top + v.getHeight();
             int right = left + v.getWidth();
-            if (event.getX() > left && event.getX() < right
-                    && event.getY() > top && event.getY() < bottom) {
-                // 点击的是输入框区域，保留点击EditText的事件
-                return false;
-            } else {
-                return true;
-            }
+            return !(event.getX() > left && event.getX() < right
+                    && event.getY() > top && event.getY() < bottom);
         }
         return false;
     }

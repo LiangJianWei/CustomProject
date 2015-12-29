@@ -12,7 +12,7 @@ import android.util.DisplayMetrics;
 import java.util.Random;
 import java.util.UUID;
 
-import com.liangjianwei.customproject.BaseApplication;
+import com.liangjianwei.customproject.Base.BaseApplication;
 
 public final class MobileInfoUtils {
     private final static String reg = "^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$";

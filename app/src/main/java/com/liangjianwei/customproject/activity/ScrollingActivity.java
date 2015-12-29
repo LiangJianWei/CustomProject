@@ -1,21 +1,31 @@
-package com.liangjianwei.customproject;
+/*
+ * Copyright (c) 2015.
+ *
+ * 个人信息 版权所有
+ *
+ * LIANG JIAN WEI
+ */
+
+package com.liangjianwei.customproject.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.liangjianwei.customproject.Base.BaseActivity;
 import com.liangjianwei.customproject.Okhttp.HttpUtils;
+import com.liangjianwei.customproject.R;
 
-public class ScrollingActivity extends BaseActivity {
+public class ScrollingActivity extends AppCompatActivity {
 
 
     private HttpUtils httpUtils;
     private String url = "https://app.junrongdai.com/appapi/getProjectListInfo";
-
 
 
     @Override
@@ -30,7 +40,7 @@ public class ScrollingActivity extends BaseActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ScrollingActivity.this,TestHttpActivity.class));
+                startActivity(new Intent(ScrollingActivity.this, TestHttpActivity.class));
             }
         });
     }
@@ -46,7 +56,7 @@ public class ScrollingActivity extends BaseActivity {
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(ScrollingActivity.this, MainActivity.class));
+            startActivity(new Intent(ScrollingActivity.this, ViewPagerActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

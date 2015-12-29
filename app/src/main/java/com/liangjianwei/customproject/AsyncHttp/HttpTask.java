@@ -2,12 +2,10 @@ package com.liangjianwei.customproject.AsyncHttp;
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.util.Log;
 
-import com.jrd.loan.base.JrdConfig;
-import com.jrd.loan.encrypt.RSAUtil;
-import com.jrd.loan.parser.JsonGenerator;
-import com.jrd.loan.parser.Parser;
-import com.jrd.loan.util.LogUtil;
+import com.liangjianwei.customproject.HttpRequest.JsonGenerator;
+import com.liangjianwei.customproject.parser.Parser;
 import com.loopj.android.http.RequestParams;
 
 import java.util.HashMap;
@@ -15,17 +13,16 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 public class HttpTask {
-    private final static String TAG = "HttpRequest";
-    private final static String JSON_PARAM = "paras";
-    private final static String BASE_URL = JrdConfig.getBaseUrl();
     public final static int METHOD_GET = 0;
     public final static int METHOD_POST = 1;
-
-    private Context context;
-    private Parser parser;
+    private final static String TAG = "HttpRequest";
+    private final static String JSON_PARAM = "paras";
+    private final static String BASE_URL = "";
     private final RequestParams params;
     private final String url;
     private final int method;
+    private Context context;
+    private Parser parser;
     private boolean useJson;
     private JsonGenerator jsonGenerator;
 
@@ -37,7 +34,6 @@ public class HttpTask {
         this.url = new StringBuffer(BASE_URL).append(url).toString();
         this.method = method;
 
-        LogUtil.d(TAG, this.url);
     }
 
     public static HttpTask getHttpTask(Context context, String url, int method) {
@@ -143,21 +139,21 @@ public class HttpTask {
 
         if (this.method == METHOD_POST) {
             if (!this.useJson) {
-                LogUtil.d(TAG, "--------------- runTask--> " + this.params.toString());
+                Log.d(TAG, "--------------- runTask--> " + this.params.toString());
 
                 HttpRequest.excuteHttpPost(this.context, this.parser, this.url, this.params, tClass, httpTaskListener);
             } else {// 以Json方式传递, 并且用RSA加密
-                String jsonStr = this.jsonGenerator.generateJson();
-                String rsaJsonStr = RSAUtil.encryptBase64ByPublicKey(jsonStr);
-
-                LogUtil.d(TAG, "--------------- runTask--> " + jsonStr);
-                LogUtil.d(TAG, "--------------- runTask--> " + rsaJsonStr);
-
-                this.params.put(JSON_PARAM, rsaJsonStr);
+//                String jsonStr = this.jsonGenerator.generateJson();
+//                String rsaJsonStr = RSAUtil.encryptBase64ByPublicKey(jsonStr);
+//
+//                Log.d(TAG, "--------------- runTask--> " + jsonStr);
+//                Log.d(TAG, "--------------- runTask--> " + rsaJsonStr);
+//
+//                this.params.put(JSON_PARAM, rsaJsonStr);
                 HttpRequest.excuteHttpPost(this.context, this.parser, this.url, this.params, tClass, httpTaskListener);
             }
         } else {
-            LogUtil.d(TAG, "--------------- runTask--> " + this.params.toString());
+            Log.d(TAG, "--------------- runTask--> " + this.params.toString());
 
             HttpRequest.excuteHttpGet(this.context, this.parser, this.url, this.params, tClass, httpTaskListener);
         }

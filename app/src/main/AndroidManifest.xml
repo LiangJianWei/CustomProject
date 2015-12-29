@@ -11,14 +11,14 @@
         android:value="${CHANNEL_NAME}" />
 
     <application
-        android:name=".BaseApplication"
+        android:name=".Base.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ScrollingActivity"
+            android:name=".activity.ScrollingActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -27,11 +27,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.TestHttpActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.ViewPagerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".TestHttpActivity" />
     </application>
 
 </manifest>
-

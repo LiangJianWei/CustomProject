@@ -5,7 +5,7 @@ import android.os.StatFs;
 
 import java.io.File;
 
-import com.liangjianwei.customproject.BaseApplication;
+import com.liangjianwei.customproject.Base.BaseApplication;
 
 
 /**
