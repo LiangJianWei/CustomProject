@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright (c) 2015.
+  ~ Copyright (c) 2016.
   ~
   ~ 个人信息 版权所有
   ~
@@ -9,15 +9,13 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:layout_height="match_parent">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="EventBus Text"
-        android:id="@+id/event_next_btn"
-        android:layout_gravity="center_horizontal" />
+        android:id="@+id/event_send_btn"
+        android:text="发送msg"/>
 
 </LinearLayout>

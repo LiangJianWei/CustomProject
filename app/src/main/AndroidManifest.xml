@@ -11,7 +11,7 @@
         android:value="${CHANNEL_NAME}" />
 
     <application
-        android:name="com.liangjianwei.customproject.Base.BaseApplication"
+        android:name=".Base.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -32,6 +32,8 @@
             android:name=".Activity.ViewPagerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activity.SuspensionActivity" />
+        <activity android:name=".Activity.EventFristActivity" />
+        <activity android:name=".Activity.EventSecondActivity"/>
     </application>
 
 </manifest>
