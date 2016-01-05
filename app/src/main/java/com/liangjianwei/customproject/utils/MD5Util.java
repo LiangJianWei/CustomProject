@@ -1,4 +1,4 @@
-package com.liangjianwei.customproject.utils;
+package com.liangjianwei.customproject.Utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

@@ -6,25 +6,26 @@
  * LIANG JIAN WEI
  */
 
-package com.liangjianwei.customproject.activity;
+package com.liangjianwei.customproject.Activity;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.ListFragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 
 import com.liangjianwei.customproject.Base.BaseActivity;
 import com.liangjianwei.customproject.R;
-import com.liangjianwei.customproject.fragment.ListViewFragment;
-import com.liangjianwei.customproject.fragment.OtherFragment;
+import com.liangjianwei.customproject.Fragment.ListViewFragment;
+import com.liangjianwei.customproject.Fragment.OtherFragment;
+import com.liangjianwei.customproject.Widght.InsideViewPager;
 
-public class ViewPagerActivity extends BaseActivity {
+public class ViewPagerActivity extends AppCompatActivity {
 
 
     private TabLayout tabLayout;
-    private ViewPager viewPager;
+    private InsideViewPager viewPager;
 
     private String[] mTabTitles = new String[]{"测试listView", "其他"};
 
@@ -34,7 +35,7 @@ public class ViewPagerActivity extends BaseActivity {
         setContentView(R.layout.content_view_pager);
 
         tabLayout = (TabLayout) findViewById(R.id.id_tab_layout);
-        viewPager = (ViewPager) findViewById(R.id.id_tab_viewpager);
+        viewPager = (InsideViewPager) findViewById(R.id.id_tab_viewpager);
 
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override

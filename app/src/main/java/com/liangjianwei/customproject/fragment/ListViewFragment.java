@@ -6,7 +6,7 @@
  * LIANG JIAN WEI
  */
 
-package com.liangjianwei.customproject.fragment;
+package com.liangjianwei.customproject.Fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -19,7 +19,7 @@ import android.widget.Toast;
 import com.liangjianwei.customproject.Base.CommontAdapter;
 import com.liangjianwei.customproject.Base.ViewHolder;
 import com.liangjianwei.customproject.R;
-import com.liangjianwei.customproject.bean.MobileAddressBean.RetDataEntity;
+import com.liangjianwei.customproject.Bean.MobileAddressBean.RetDataEntity;
 
 import java.util.ArrayList;
 import java.util.List;

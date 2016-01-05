@@ -1,4 +1,4 @@
-package com.liangjianwei.customproject.bean;
+package com.liangjianwei.customproject.Bean;
 
 /**
  * Created by Javen on 2015/12/15.

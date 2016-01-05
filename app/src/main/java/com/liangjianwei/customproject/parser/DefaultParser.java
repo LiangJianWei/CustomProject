@@ -1,4 +1,4 @@
-package com.liangjianwei.customproject.parser;
+package com.liangjianwei.customproject.Parser;
 
 import com.google.gson.Gson;
 

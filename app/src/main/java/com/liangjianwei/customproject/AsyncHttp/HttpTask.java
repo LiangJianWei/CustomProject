@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.liangjianwei.customproject.HttpRequest.JsonGenerator;
-import com.liangjianwei.customproject.parser.Parser;
+import com.liangjianwei.customproject.Parser.Parser;
 import com.loopj.android.http.RequestParams;
 
 import java.util.HashMap;

@@ -6,7 +6,7 @@
  * LIANG JIAN WEI
  */
 
-package com.liangjianwei.customproject.autolayout;
+package com.liangjianwei.customproject.Autolayout;
 
 /**
  * Created by LIANG JIAN WEI on 15/12/1 17:15

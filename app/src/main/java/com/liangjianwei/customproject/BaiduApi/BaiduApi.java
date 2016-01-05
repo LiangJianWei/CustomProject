@@ -5,9 +5,9 @@ import android.content.Context;
 import com.liangjianwei.customproject.Okhttp.CacheType;
 import com.liangjianwei.customproject.Okhttp.HttpUtils;
 import com.liangjianwei.customproject.Okhttp.OnHttpTaskListener;
-import com.liangjianwei.customproject.bean.IDCardBean;
-import com.liangjianwei.customproject.bean.MobileAddressBean;
-import com.liangjianwei.customproject.bean.WeatherBean;
+import com.liangjianwei.customproject.Bean.IDCardBean;
+import com.liangjianwei.customproject.Bean.MobileAddressBean;
+import com.liangjianwei.customproject.Bean.WeatherBean;
 
 /**
  * Created by Javen on 2015/12/15.

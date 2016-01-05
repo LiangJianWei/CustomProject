@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import com.liangjianwei.customproject.autolayout.AutoLayoutActivity;
+import com.liangjianwei.customproject.Autolayout.AutoLayoutActivity;
 
 /**
  * Created by LIANG JIAN WEI on 2015/12/4 15:00

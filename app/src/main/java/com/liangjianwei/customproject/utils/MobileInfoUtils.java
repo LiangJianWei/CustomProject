@@ -1,4 +1,4 @@
-package com.liangjianwei.customproject.utils;
+package com.liangjianwei.customproject.Utils;
 
 import android.content.Context;
 import android.net.wifi.WifiInfo;

@@ -1,4 +1,4 @@
-package com.liangjianwei.customproject.utils;
+package com.liangjianwei.customproject.Utils;
 
 import android.graphics.Color;
 import android.os.CountDownTimer;

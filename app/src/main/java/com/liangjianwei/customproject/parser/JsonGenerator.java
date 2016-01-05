@@ -1,4 +1,4 @@
-package com.liangjianwei.customproject.parser;
+package com.liangjianwei.customproject.Parser;
 
 import org.json.JSONException;
 import org.json.JSONObject;

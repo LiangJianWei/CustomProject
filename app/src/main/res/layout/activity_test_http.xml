@@ -5,9 +5,9 @@
     android:orientation="vertical">
 
     <EditText
+        android:id="@+id/id_content_edit"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/editText" />
+        android:layout_height="50dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,28 +16,28 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/id_card_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="身份查询" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/id_weater_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="天气查询" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/id_post_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="POST Network" />
+            android:text="POST" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/id_address_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -46,20 +46,21 @@
     </LinearLayout>
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/scrollView"
-        android:layout_gravity="center_horizontal" >
+        android:layout_gravity="center_horizontal">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
+                android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/textView2"
-                android:gravity="center"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:gravity="center" />
         </FrameLayout>
     </ScrollView>
 

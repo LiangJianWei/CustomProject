@@ -6,7 +6,7 @@
  * LIANG JIAN WEI
  */
 
-package com.liangjianwei.customproject.activity;
+package com.liangjianwei.customproject.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +17,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.liangjianwei.customproject.Base.BaseActivity;
 import com.liangjianwei.customproject.Okhttp.HttpUtils;
 import com.liangjianwei.customproject.R;
 
@@ -57,6 +56,9 @@ public class ScrollingActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             startActivity(new Intent(ScrollingActivity.this, ViewPagerActivity.class));
+            return true;
+        } else if (id == R.id.action_suspension) {
+            startActivity(new Intent(ScrollingActivity.this, SuspensionActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

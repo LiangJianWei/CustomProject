@@ -4,9 +4,8 @@ import android.content.Context;
 import android.util.Log;
 
 import com.liangjianwei.customproject.BaiduApi.BaiduApi;
-import com.liangjianwei.customproject.parser.DefaultParser;
-import com.liangjianwei.customproject.parser.Parser;
-import com.liangjianwei.customproject.utils.MD5Util;
+import com.liangjianwei.customproject.Parser.DefaultParser;
+import com.liangjianwei.customproject.Parser.Parser;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.TextHttpResponseHandler;

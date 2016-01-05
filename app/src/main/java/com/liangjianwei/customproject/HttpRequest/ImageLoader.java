@@ -20,7 +20,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import com.liangjianwei.customproject.utils.FileUtils;
+import com.liangjianwei.customproject.Utils.FileUtils;
 
 public final class ImageLoader extends com.nostra13.universalimageloader.core.ImageLoader {
     private final static Md5FileNameGenerator md5Generator = new Md5FileNameGenerator();

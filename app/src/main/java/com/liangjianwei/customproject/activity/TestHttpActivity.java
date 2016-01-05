@@ -6,48 +6,52 @@
  * LIANG JIAN WEI
  */
 
-package com.liangjianwei.customproject.activity;
+package com.liangjianwei.customproject.Activity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.liangjianwei.customproject.BaiduApi.BaiduApi;
 import com.liangjianwei.customproject.Base.BaseActivity;
-import com.liangjianwei.customproject.R;
-import com.liangjianwei.customproject.bean.IDCardBean;
-import com.liangjianwei.customproject.bean.MobileAddressBean;
-import com.liangjianwei.customproject.bean.WeatherBean;
-import com.squareup.okhttp.Request;
-
+import com.liangjianwei.customproject.Bean.IDCardBean;
+import com.liangjianwei.customproject.Bean.MobileAddressBean;
+import com.liangjianwei.customproject.Bean.WeatherBean;
 import com.liangjianwei.customproject.Okhttp.OnHttpTaskListener;
+import com.liangjianwei.customproject.R;
+import com.squareup.okhttp.Request;
 
 public class TestHttpActivity extends BaseActivity {
 
     private String postUrl = "https://app.junrongdai.com/appapi/getProjectListInfo";
     private ProgressDialog dialog;
-    private TextView text;
-    private EditText editText;
+
+    private EditText idcontentedit;
+    private TextView textView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_http);
 
-        editText = (EditText) findViewById(R.id.editText);
-        text = (TextView)findViewById(R.id.textView2);
-        dialog = new ProgressDialog(TestHttpActivity.this);
 
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+        this.textView2 = (TextView) findViewById(R.id.textView2);
+        Button idaddressbtn = (Button) findViewById(R.id.id_address_btn);
+        Button idpostbtn = (Button) findViewById(R.id.id_post_btn);
+        Button idweaterbtn = (Button) findViewById(R.id.id_weater_btn);
+        Button idcardbtn = (Button) findViewById(R.id.id_card_btn);
+        this.idcontentedit = (EditText) findViewById(R.id.id_content_edit);
+
+        idcardbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (editText.getText().toString().equals("")) {
+                if (idcontentedit.getText().toString().equals("")) {
                     return;
                 }
-                BaiduApi.searchIDCard(TestHttpActivity.this, editText.getText().toString(), new OnHttpTaskListener<IDCardBean>() {
+                BaiduApi.searchIDCard(TestHttpActivity.this, idcontentedit.getText().toString(), new OnHttpTaskListener<IDCardBean>() {
                     @Override
                     public void onStart() {
 
@@ -65,10 +69,10 @@ public class TestHttpActivity extends BaseActivity {
                     public void onSuccess(final IDCardBean bean, final String context) {
 
                         dialog.dismiss();
-                        text.post(new Runnable() {
+                        textView2.post(new Runnable() {
                             @Override
                             public void run() {
-                                text.setText(bean.getRetData().getSex() + bean.getRetData().getBirthday() + bean.getRetData().getAddress());
+                                textView2.setText(bean.getRetData().getSex() + bean.getRetData().getBirthday() + bean.getRetData().getAddress());
                             }
                         });
                     }
@@ -76,13 +80,13 @@ public class TestHttpActivity extends BaseActivity {
 
             }
         });
-        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+        idweaterbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (editText.getText().toString().equals("")) {
+                if (idcontentedit.getText().toString().equals("")) {
                     return;
                 }
-                BaiduApi.searchWeather(TestHttpActivity.this, editText.getText().toString(), new OnHttpTaskListener<WeatherBean>() {
+                BaiduApi.searchWeather(TestHttpActivity.this, idcontentedit.getText().toString(), new OnHttpTaskListener<WeatherBean>() {
                     @Override
                     public void onStart() {
 
@@ -98,30 +102,30 @@ public class TestHttpActivity extends BaseActivity {
                     @Override
                     public void onSuccess(final WeatherBean bean, final String context) {
                         dialog.dismiss();
-                        text.post(new Runnable() {
+                        textView2.post(new Runnable() {
                             @Override
                             public void run() {
-                                text.setText(bean.getRetData().getAltitude() + bean.getRetData().getCity() + bean.getRetData().getCitycode() + bean.getRetData().getDate() + bean.getRetData().getH_tmp() + bean.getRetData().getL_tmp() + bean.getRetData().getPostCode() + bean.getRetData().getSunrise() + bean.getRetData().getSunset() + bean.getRetData().getTemp() + bean.getRetData().getTime() + bean.getRetData().getLongitude() + bean.getRetData().getLatitude() + bean.getRetData().getWeather() + bean.getRetData().getWS() + bean.getRetData().getWD());
+                                textView2.setText(bean.getRetData().getAltitude() + bean.getRetData().getCity() + bean.getRetData().getCitycode() + bean.getRetData().getDate() + bean.getRetData().getH_tmp() + bean.getRetData().getL_tmp() + bean.getRetData().getPostCode() + bean.getRetData().getSunrise() + bean.getRetData().getSunset() + bean.getRetData().getTemp() + bean.getRetData().getTime() + bean.getRetData().getLongitude() + bean.getRetData().getLatitude() + bean.getRetData().getWeather() + bean.getRetData().getWS() + bean.getRetData().getWD());
                             }
                         });
                     }
                 });
             }
         });
-        findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
+        idpostbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
+        idaddressbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (editText.getText().toString().equals("")) {
+                if (idcontentedit.getText().toString().equals("")) {
                     return;
                 }
-                BaiduApi.searchMobile(TestHttpActivity.this, editText.getText().toString(), new OnHttpTaskListener<MobileAddressBean>() {
+                BaiduApi.searchMobile(TestHttpActivity.this, idcontentedit.getText().toString(), new OnHttpTaskListener<MobileAddressBean>() {
                     @Override
                     public void onStart() {
 
@@ -141,10 +145,10 @@ public class TestHttpActivity extends BaseActivity {
                         if (bean.getErrNum() == -1) {
                             return;
                         }
-                        text.post(new Runnable() {
+                        textView2.post(new Runnable() {
                             @Override
                             public void run() {
-                                text.setText(bean.getRetData().getPhone() + bean.getRetData().getCity() + bean.getRetData().getProvince() + bean.getRetData().getSupplier());
+                                textView2.setText(bean.getRetData().getPhone() + bean.getRetData().getCity() + bean.getRetData().getProvince() + bean.getRetData().getSupplier());
                             }
                         });
                     }

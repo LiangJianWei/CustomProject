@@ -16,9 +16,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import com.liangjianwei.customproject.parser.DefaultParser;
-import com.liangjianwei.customproject.parser.Parser;
-import com.liangjianwei.customproject.utils.MobileInfoUtils;
+import com.liangjianwei.customproject.Parser.DefaultParser;
+import com.liangjianwei.customproject.Parser.Parser;
 
 /**
  * OKHttp 工具类

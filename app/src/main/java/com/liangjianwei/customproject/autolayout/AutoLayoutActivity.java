@@ -6,7 +6,7 @@
  * LIANG JIAN WEI
  */
 
-package com.liangjianwei.customproject.autolayout;
+package com.liangjianwei.customproject.Autolayout;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
