@@ -17,11 +17,18 @@
         app:tabTextColor="#000000" />
 
 
-    <com.liangjianwei.customproject.Widght.InsideViewPager
+    <android.support.v4.view.ViewPager
         android:id="@+id/id_tab_viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
+
+
+    <me.relex.circleindicator.CircleIndicator
+        android:id="@+id/id_viewpager_indicator"
+        android:layout_width="match_parent"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_height="48dp" />
 
 
 </LinearLayout>

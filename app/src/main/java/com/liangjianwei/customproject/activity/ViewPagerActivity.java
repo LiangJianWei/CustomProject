@@ -15,27 +15,31 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.liangjianwei.customproject.Base.BaseActivity;
-import com.liangjianwei.customproject.R;
 import com.liangjianwei.customproject.Fragment.ListViewFragment;
 import com.liangjianwei.customproject.Fragment.OtherFragment;
-import com.liangjianwei.customproject.Widght.InsideViewPager;
+import com.liangjianwei.customproject.R;
+
+import me.relex.circleindicator.CircleIndicator;
 
 public class ViewPagerActivity extends AppCompatActivity {
 
 
     private TabLayout tabLayout;
-    private InsideViewPager viewPager;
+    private ViewPager viewPager;
 
     private String[] mTabTitles = new String[]{"测试listView", "其他"};
+    private TabLayout idtablayout;
+    private ViewPager idtabviewpager;
+    private CircleIndicator idviewpagerindicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_view_pager);
+        this.idviewpagerindicator = (CircleIndicator) findViewById(R.id.id_viewpager_indicator);
 
         tabLayout = (TabLayout) findViewById(R.id.id_tab_layout);
-        viewPager = (InsideViewPager) findViewById(R.id.id_tab_viewpager);
+        viewPager = (ViewPager) findViewById(R.id.id_tab_viewpager);
 
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
@@ -58,6 +62,7 @@ public class ViewPagerActivity extends AppCompatActivity {
             }
         });
 
+        this.idviewpagerindicator.setViewPager(viewPager);
 
         tabLayout.setupWithViewPager(viewPager);
     }
