@@ -60,6 +60,9 @@ public class ScrollingActivity extends AppCompatActivity {
         } else if (id == R.id.action_suspension) {
             startActivity(new Intent(ScrollingActivity.this, SuspensionActivity.class));
             return true;
+        } else if (id == R.id.action_swipeRefresh) {
+            startActivity(new Intent(ScrollingActivity.this, SwipeRefreshLayoutAct.class));
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

@@ -17,7 +17,7 @@ public class HttpTask {
     public final static int METHOD_POST = 1;
     private final static String TAG = "HttpRequest";
     private final static String JSON_PARAM = "paras";
-    private final static String BASE_URL = "";
+    private final static String BASE_URL = "http://172.16.205.5:8191/appapi";
     private final RequestParams params;
     private final String url;
     private final int method;

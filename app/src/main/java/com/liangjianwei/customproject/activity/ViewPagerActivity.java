@@ -15,6 +15,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
+import com.liangjianwei.customproject.Animation.DepthPageTransformer;
 import com.liangjianwei.customproject.Fragment.ListViewFragment;
 import com.liangjianwei.customproject.Fragment.OtherFragment;
 import com.liangjianwei.customproject.R;
@@ -28,8 +29,6 @@ public class ViewPagerActivity extends AppCompatActivity {
     private ViewPager viewPager;
 
     private String[] mTabTitles = new String[]{"测试listView", "其他"};
-    private TabLayout idtablayout;
-    private ViewPager idtabviewpager;
     private CircleIndicator idviewpagerindicator;
 
     @Override
@@ -41,6 +40,8 @@ public class ViewPagerActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.id_tab_layout);
         viewPager = (ViewPager) findViewById(R.id.id_tab_viewpager);
 
+
+        viewPager.setPageTransformer(true, new DepthPageTransformer());
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {

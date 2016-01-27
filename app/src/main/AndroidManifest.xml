@@ -33,7 +33,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activity.SuspensionActivity" />
         <activity android:name=".Activity.EventFristActivity" />
-        <activity android:name=".Activity.EventSecondActivity"/>
+        <activity android:name=".Activity.EventSecondActivity" />
+        <activity android:name=".Activity.SwipeRefreshLayoutAct"></activity>
     </application>
 
 </manifest>

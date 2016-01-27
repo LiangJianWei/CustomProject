@@ -12,4 +12,9 @@
         android:orderInCategory="100"
         android:title="@string/action_suspension"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_swipeRefresh"
+        android:orderInCategory="100"
+        android:title="@string/action_swipeRefresh"
+        app:showAsAction="never" />
 </menu>

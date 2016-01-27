@@ -8,7 +8,7 @@ android {
         //包名
         applicationId "com.liangjianwei.customproject"
         //sdk最小支持版本
-        minSdkVersion 17
+        minSdkVersion 14
         //sdk最大支持版本
         targetSdkVersion 23
         //当前版本号
@@ -35,28 +35,26 @@ android {
         abortOnError false
     }
 
-    android {
-        // 你的其他配置代码
 
-        productFlavors {
+    productFlavors {
 
-            yingyongbao {
-                manifestPlaceholders = [CHANNEL_NAME: "YINGYONGBAO"]
-            }
-            umeng {
-                manifestPlaceholders = [CHANNEL_NAME: "UMENG"]
-            }
-            wandoujia {
-                manifestPlaceholders = [CHANNEL_NAME: "WANDOUJIA"]
-            }
-
+        yingyongbao {
+            manifestPlaceholders = [CHANNEL_NAME: "YINGYONGBAO"]
         }
-        // 你的其他配置代码
+        umeng {
+            manifestPlaceholders = [CHANNEL_NAME: "UMENG"]
+        }
+        wandoujia {
+            manifestPlaceholders = [CHANNEL_NAME: "WANDOUJIA"]
+        }
+
     }
+
+
     //签名
     signingConfigs {
         release {
-            storeFile file("C:\\Users\\Javen\\Desktop\\loan_keystore.keystore")
+            storeFile file("F:\\keystore\\loan_keystore.keystore")
             storePassword "jrd_20150925"
             keyAlias "loan"
             keyPassword "jrd_20150925"
@@ -71,7 +69,9 @@ dependencies {
     compile 'com.google.code.gson:gson:2.5'
     compile 'com.umeng.analytics:analytics:5.6.1'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
-    compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'de.greenrobot:eventbus:2.4.0'
     compile 'me.relex:circleindicator:1.1.7'
+    compile 'org.apache.httpcomponents:httpcore:4.4.4'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.loopj.android:android-async-http:1.4.9'
 }
