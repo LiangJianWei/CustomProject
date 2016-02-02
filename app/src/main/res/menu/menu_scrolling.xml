@@ -17,4 +17,10 @@
         android:orderInCategory="100"
         android:title="@string/action_swipeRefresh"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_pullRefresh"
+        android:orderInCategory="100"
+        android:title="@string/action_pullRefresh"
+        app:showAsAction="never" />
 </menu>

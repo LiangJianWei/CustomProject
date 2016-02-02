@@ -34,7 +34,8 @@
         <activity android:name=".Activity.SuspensionActivity" />
         <activity android:name=".Activity.EventFristActivity" />
         <activity android:name=".Activity.EventSecondActivity" />
-        <activity android:name=".Activity.SwipeRefreshLayoutAct"></activity>
+        <activity android:name=".Activity.SwipeRefreshLayoutAct" />
+        <activity android:name=".Activity.PullRefreshLayoutAct"></activity>
     </application>
 
 </manifest>

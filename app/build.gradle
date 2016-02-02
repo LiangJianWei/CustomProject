@@ -73,5 +73,6 @@ dependencies {
     compile 'me.relex:circleindicator:1.1.7'
     compile 'org.apache.httpcomponents:httpcore:4.4.4'
     compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.baoyz.pullrefreshlayout:library:1.2.0'
     compile 'com.loopj.android:android-async-http:1.4.9'
 }

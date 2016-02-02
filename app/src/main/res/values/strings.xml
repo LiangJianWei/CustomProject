@@ -91,7 +91,8 @@
     </string>
     <string name="action_settings">Next Activity</string>
     <string name="action_suspension">悬浮Activity</string>
-    <string name="action_swipeRefresh">下拉刷新Activity</string>
+    <string name="action_swipeRefresh">SwipeRefreshLayout</string>
+    <string name="action_pullRefresh">PullRefreshLayout</string>
     <string name="title_activity_main">MainActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
