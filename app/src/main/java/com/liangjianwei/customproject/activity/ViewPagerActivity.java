@@ -16,23 +16,21 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.liangjianwei.customproject.Animation.DepthPageTransformer;
-import com.liangjianwei.customproject.Fragment.ListViewFragment;
-import com.liangjianwei.customproject.Fragment.OtherFragment;
 import com.liangjianwei.customproject.R;
 
 import me.relex.circleindicator.CircleIndicator;
 
-public class ViewPagerActivity extends AppCompatActivity {
+public class ViewPagerActivity extends AppCompatActivity{
 
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    private String[] mTabTitles = new String[]{"测试listView", "其他"};
+    private String[] mTabTitles = new String[]{ "测试listView", "其他" };
     private CircleIndicator idviewpagerindicator;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_view_pager);
         this.idviewpagerindicator = (CircleIndicator) findViewById(R.id.id_viewpager_indicator);
@@ -42,23 +40,23 @@ public class ViewPagerActivity extends AppCompatActivity {
 
 
         viewPager.setPageTransformer(true, new DepthPageTransformer());
-        viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+        viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()){
             @Override
-            public Fragment getItem(int position) {
+            public Fragment getItem (int position){
                 switch (position) {
                     case 1:
-                        return new OtherFragment();
+                        return new com.liangjianwei.customproject.fragment.OtherFragment();
                 }
-                return new ListViewFragment();
+                return new com.liangjianwei.customproject.fragment.ListViewFragment();
             }
 
             @Override
-            public CharSequence getPageTitle(int position) {
-                return mTabTitles[position];
+            public CharSequence getPageTitle (int position){
+                return mTabTitles[ position ];
             }
 
             @Override
-            public int getCount() {
+            public int getCount (){
                 return mTabTitles.length;
             }
         });

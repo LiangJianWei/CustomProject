@@ -63,10 +63,17 @@ public class ScrollingActivity extends AppCompatActivity {
         } else if (id == R.id.action_swipeRefresh) {
             startActivity(new Intent(ScrollingActivity.this, SwipeRefreshLayoutAct.class));
             return true;
-        }
-        else if (id == R.id.action_pullRefresh) {
+        } else if (id == R.id.action_pullRefresh) {
             startActivity(new Intent(ScrollingActivity.this, PullRefreshLayoutAct.class));
             return true;
+        } else if (id == R.id.action_recyclerview) {
+            startActivity(new Intent(ScrollingActivity.this, RecylerViewAct.class));
+            return true;
+
+        } else if (id == R.id.action_cardview) {
+            startActivity(new Intent(ScrollingActivity.this, CardViewAct.class));
+            return true;
+
         }
         return super.onOptionsItemSelected(item);
     }

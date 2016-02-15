@@ -93,6 +93,8 @@
     <string name="action_suspension">悬浮Activity</string>
     <string name="action_swipeRefresh">SwipeRefreshLayout</string>
     <string name="action_pullRefresh">PullRefreshLayout</string>
+    <string name="action_RecyclerView">RecyclerView</string>
+    <string name="action_CardView">CardView</string>
     <string name="title_activity_main">MainActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

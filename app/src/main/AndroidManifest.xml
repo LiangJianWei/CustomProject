@@ -35,7 +35,9 @@
         <activity android:name=".Activity.EventFristActivity" />
         <activity android:name=".Activity.EventSecondActivity" />
         <activity android:name=".Activity.SwipeRefreshLayoutAct" />
-        <activity android:name=".Activity.PullRefreshLayoutAct"></activity>
+        <activity android:name=".Activity.PullRefreshLayoutAct" />
+        <activity android:name=".Activity.RecylerViewAct" />
+        <activity android:name=".Activity.CardViewAct"></activity>
     </application>
 
 </manifest>

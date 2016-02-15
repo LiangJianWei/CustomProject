@@ -6,7 +6,7 @@
  * LIANG JIAN WEI
  */
 
-package com.liangjianwei.customproject.Fragment;
+package com.liangjianwei.customproject.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -23,4 +23,14 @@
         android:orderInCategory="100"
         android:title="@string/action_pullRefresh"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_recyclerview"
+        android:orderInCategory="100"
+        android:title="@string/action_RecyclerView"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_cardview"
+        android:orderInCategory="100"
+        android:title="@string/action_CardView"
+        app:showAsAction="never" />
 </menu>

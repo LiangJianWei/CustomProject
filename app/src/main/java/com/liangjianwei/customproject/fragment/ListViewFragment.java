@@ -6,7 +6,7 @@
  * LIANG JIAN WEI
  */
 
-package com.liangjianwei.customproject.Fragment;
+package com.liangjianwei.customproject.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
