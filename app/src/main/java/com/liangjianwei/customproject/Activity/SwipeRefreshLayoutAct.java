@@ -56,11 +56,11 @@ public class SwipeRefreshLayoutAct extends AppCompatActivity implements SwipeRef
             }
 
             @Override
-            public void onFinishTask(com.liangjianwei.customproject.Bean.ProjectBean bean) {
+            public void onFinishTask(ProjectBean bean) {
 
                 swipeRefreshLayout.setRefreshing(false);
                 mList.clear();
-                for (com.liangjianwei.customproject.Bean.ProjectBean.ProjectListEntity name : bean.getProjectList()) {
+                for (ProjectBean.ProjectListEntity name : bean.getProjectList()) {
 
                     mList.add(name.getProjectName());
 

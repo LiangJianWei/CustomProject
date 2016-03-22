@@ -1,4 +1,4 @@
-package com.liangjianwei.customproject.Utils;
+package com.liangjianwei.customproject.utils;
 
 import android.content.Context;
 import android.net.wifi.WifiInfo;
@@ -8,11 +8,10 @@ import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 
+import com.liangjianwei.customproject.Base.BaseApplication;
 
 import java.util.Random;
 import java.util.UUID;
-
-import com.liangjianwei.customproject.Base.BaseApplication;
 
 public final class MobileInfoUtils {
     private final static String reg = "^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$";

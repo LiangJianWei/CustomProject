@@ -1,4 +1,4 @@
-package com.liangjianwei.customproject.Utils;
+package com.liangjianwei.customproject.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

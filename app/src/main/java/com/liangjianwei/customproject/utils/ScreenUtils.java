@@ -1,4 +1,4 @@
-package com.liangjianwei.customproject.Utils;
+package com.liangjianwei.customproject.utils;
 
 import android.app.Activity;
 import android.content.Context;

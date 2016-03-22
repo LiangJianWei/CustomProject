@@ -1,11 +1,11 @@
-package com.liangjianwei.customproject.Utils;
+package com.liangjianwei.customproject.utils;
 
 import android.os.Environment;
 import android.os.StatFs;
 
-import java.io.File;
-
 import com.liangjianwei.customproject.Base.BaseApplication;
+
+import java.io.File;
 
 
 /**

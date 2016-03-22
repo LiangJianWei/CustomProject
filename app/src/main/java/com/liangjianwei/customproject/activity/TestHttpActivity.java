@@ -10,6 +10,7 @@ package com.liangjianwei.customproject.Activity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,9 +18,12 @@ import android.widget.TextView;
 
 import com.liangjianwei.customproject.BaiduApi.BaiduApi;
 import com.liangjianwei.customproject.Base.BaseActivity;
+import com.liangjianwei.customproject.Bean.BaseBean;
 import com.liangjianwei.customproject.Bean.IDCardBean;
 import com.liangjianwei.customproject.Bean.MobileAddressBean;
 import com.liangjianwei.customproject.Bean.WeatherBean;
+import com.liangjianwei.customproject.Okhttp.CacheType;
+import com.liangjianwei.customproject.Okhttp.HttpUtils;
 import com.liangjianwei.customproject.Okhttp.OnHttpTaskListener;
 import com.liangjianwei.customproject.R;
 import com.squareup.okhttp.Request;
@@ -27,6 +31,7 @@ import com.squareup.okhttp.Request;
 public class TestHttpActivity extends BaseActivity {
 
     private String postUrl = "https://app.junrongdai.com/appapi/getProjectListInfo";
+    private String url = "http://edian.guoanshequ.net/index.php?com=com_appService&method=createToken&device=00000000-10b6-7b97-10b6-7b9700000000&push=04ede0d2d06acd604d2db48cdeb5a035f072d31c&time=1456347952&brand=SM-G9009D&type=android&os=5.0&client=1";
     private ProgressDialog dialog;
 
     private EditText idcontentedit;
@@ -115,6 +120,28 @@ public class TestHttpActivity extends BaseActivity {
         idpostbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                HttpUtils httpUtils = new HttpUtils(TestHttpActivity.this, url, CacheType.NETWORK_ELSE_CACHED);
+                httpUtils.post(BaseBean.class, new OnHttpTaskListener<BaseBean>() {
+                    @Override
+                    public void onStart() {
+                        
+                    }
+
+                    @Override
+                    public void onError(Request request) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(BaseBean bean, String content) {
+
+                        Log.d("11111111111111", content);
+
+                    }
+                });
+
+
 
             }
         });

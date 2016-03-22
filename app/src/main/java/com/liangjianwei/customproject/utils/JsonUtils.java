@@ -1,4 +1,4 @@
-package com.liangjianwei.customproject.Utils;
+package com.liangjianwei.customproject.utils;
 
 /**
  * Created by Javen on 2015/12/4.
