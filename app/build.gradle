@@ -51,15 +51,15 @@ android {
     }
 
 
-    //签名
-    signingConfigs {
-        release {
-            storeFile file("F:\\keystore\\loan_keystore.keystore")
-            storePassword "jrd_20150925"
-            keyAlias "loan"
-            keyPassword "jrd_20150925"
-        }
-    }
+//    //签名
+//    signingConfigs {
+//        release {
+//            storeFile file("F:\\keystore\\loan_keystore.keystore")
+//            storePassword "jrd_20150925"
+//            keyAlias "loan"
+//            keyPassword "jrd_20150925"
+//        }
+//    }
 }
 
 dependencies {
